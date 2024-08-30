@@ -33,9 +33,11 @@ class KeywordQueryEventListener(EventListener):
 class ItemEnterEventListener(EventListener):
 
     def on_event(self, event, extension):
-        command = event.get_data()
+        terminalExecutable = "gnome-terminal -- "
+        rawCommand = event.get_data()
         #logger.info(command)
-        subprocess.run(command,shell=True)
+        commandToBeRun = terminalExecutable + rawCommand
+        subprocess.run(commandToBeRun,shell=True)
         return HideWindowAction()
 
 
