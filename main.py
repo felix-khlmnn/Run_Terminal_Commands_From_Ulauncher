@@ -26,7 +26,7 @@ class KeywordQueryEventListener(EventListener):
         command = event.get_argument()
         return RenderResultListAction([ExtensionResultItem(icon='icon.png',
                                                                   name='Run',
-                                                                  description='The command you type will be runned',
+                                                                  description='The command you type will be ran',
                                                                   on_enter=ExtensionCustomAction(data=command))])
 
 
